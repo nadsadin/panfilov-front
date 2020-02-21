@@ -362,7 +362,7 @@
   display: flex;
   height: 56px; }
 
-#book .form-label {
+#book .form-label, #book .custom-control-label {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
