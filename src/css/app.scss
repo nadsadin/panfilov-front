@@ -191,10 +191,32 @@
     color: #212121;
     margin-top: 28px;
   }
+  &-badge{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 30px;
+    border-radius: 22px;
+    display: inline-block;
+    padding-left: 16px;
+    padding-right: 16px;
+    &-blue{
+      background: linear-gradient(90deg, #002874 0%, #0051ED 100%);
+      color: #fff;
+    }
+    &-red{
+      background: #FF3440;
+      color: #fff;
+    }
+  }
 }
 #programs{
   .card{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  }
+  .ui-rect-content{
+    padding: 10px;
   }
   .card-text{
     font-size: 12px;
@@ -362,4 +384,362 @@
   bottom: 0;
   display: flex;
   height: 56px;
+}
+#book{
+  .form-label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #757575;
+  }
+  .result-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    color: #757575;
+    #date, #time, #price{
+      color: #212121;
+      font-weight: 500;
+    }
+  }
+  .book-result{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+}
+#calendar{
+  display: flex;
+  flex-wrap: wrap;
+  .month{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 140%;
+    color: #CBCBCB;
+    text-decoration: underline;
+    display: inline-block;
+    cursor: pointer;
+    &.active, &:hover{
+      color: #0051ED;
+      text-decoration: none;
+    }
+  }
+  .month-grid{
+    width: 100%;
+  }
+  .days-grid{
+    margin-top: 21px;
+    width: 100%;
+  }
+  .days-row{
+    display: flex;
+    margin-right: -4px;
+    margin-left: -4px;
+  }
+  .day-name{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 140%;
+    color: #C2C2C2;
+    margin-bottom: 3px;
+  }
+  .day-name, .day-col{
+    width: 14.2857143%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .day-col{
+    margin: 0 4px 4px;
+  }
+  .day{
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    display: block;
+    border: 1px solid #EFEFEF;
+    &:not(.disabled){
+      cursor: pointer;
+      &:hover{
+        background: #0051ED;
+        border: 1px solid #0051ED;
+        border-radius: 4px;
+        .day-status, .day-date{
+          color: #fff;
+        }
+      }
+    }
+    &-content{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    &-status{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 10px;
+      line-height: 140%;
+      color: #757575;
+      display: none;
+    }
+    &-date{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 140%;
+      color: #757575;
+      padding-top: 5px;
+    }
+    &-month{
+      display: none;
+      color: #BBBBBB;
+    }
+    &.disabled{
+      background: #EFEFEF;
+      border: 1px solid #EFEFEF;
+    }
+    &.active{
+      background: #0051ED;
+      border: 1px solid #0051ED;
+      border-radius: 4px;
+      .day-status, .day-date{
+        color: #fff;
+      }
+    }
+  }
+  .time-grid{
+    .form-label{
+      line-height: 28px;
+    }
+  }
+  .time-wrapper{
+    width: 100%;
+    display: block;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .time{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+    mix-blend-mode: normal;
+    border: 1px solid #EFEFEF;
+    border-radius: 16px;
+    width: 160px;
+    margin: 9px 15px;
+    height: 32px;
+    padding: 6px 16px;
+    display: inline-block;
+    position: relative;
+    .cancel{
+      display: none;
+    }
+    &.disabled{
+      background: #EFEFEF;
+      border: 1px solid #EFEFEF;
+    }
+    &.active{
+      background: #0051ED;
+      border: 1px solid #0051ED;
+      color: #fff;
+      .cancel{
+        display: block;
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        width: 16px;
+        height: 16px;
+        line-height: 0;
+      }
+    }
+    &:not(.disabled){
+      cursor: pointer;
+      &:hover{
+        background: #0051ED;
+        border: 1px solid #0051ED;
+        color: #fff;
+      }
+    }
+  }
+}
+@media screen and (min-width: 576px){
+  #calendar{
+    .day-col{
+      margin: 0 8px 8px;
+    }
+    .days-row{
+      margin-right: -8px;
+      margin-left: -8px;
+    }
+    .day{
+      &-status{
+        font-size: 10px;
+        display: block;
+      }
+      &-date{
+        font-size: 16px;
+      }
+      &-month{
+        display: inline;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px){
+  #calendar{
+    .day-col{
+      margin: 0 15px 15px;
+    }
+    .days-row{
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+  }
+  #book{
+    .result-text{
+      margin-left: 30px;
+    }
+    .book-result{
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+  }
+}
+@media screen and (min-width: 992px){
+  #calendar{
+    .month-grid{
+      width: 635px;
+      margin-right: 30px;
+    }
+    .time-grid{
+      width: 231px;
+    }
+    .time-wrapper{
+      width: 100%;
+      padding-top: 17px;
+    }
+  }
+}
+@media screen and (min-width: 1200px){
+  #calendar{
+    .month-grid{
+      width: 635px;
+      margin-right: 30px;
+    }
+    .day-name{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .days-row{
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    .day{
+      &-content{
+        padding: 10px 5px;
+      }
+    }
+    .time-grid{
+      width: 431px;
+    }
+  }
+}
+.radio-button{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.25px;
+  display: inline-block;
+  border: 1px solid #EFEFEF;
+  border-radius: 16px;
+  padding: 3px 16px;
+  cursor: pointer;
+  &:hover{
+    background: #0051ED;
+    border: 1px solid #0051ED;
+    color: #fff;
+  }
+  &.active{
+    background: #0051ED;
+    border: 1px solid #0051ED;
+    color: #fff;
+  }
+  &.disabled{
+    background: #EFEFEF;
+    border: 1px solid #EFEFEF;
+    color: #757575;
+  }
+  &-wrapper{
+    input:checked+.radio-button{
+      background: #0051ED;
+      border: 1px solid #0051ED;
+      color: #fff;
+    }
+    input:disabled+.radio-button{
+      background: #EFEFEF;
+      border: 1px solid #EFEFEF;
+      color: #757575;
+    }
+  }
+}
+input[type="radio"].hidden,input[type="checkbox"].hidden {
+  display: inline;
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1
+}
+
+.bottom-actions{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 0px 2px rgba(0, 0, 0, 0.14);
+  background: #FFFFFF;
+  height: 56px;
+  width: 100%;
+  align-items: center;
+  &-item{
+    display: block;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .bottom-actions{
+    display: none;
+  }
+}
+
+h1{
+  margin-top: 72px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: -0.5px;
+  color: #212121;
+}
+.breadcrumb{
+  font-size: 14px;
 }
